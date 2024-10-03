@@ -42,11 +42,12 @@ Prepare training config `./train_configs/qwen2_vl_7b_sft_cfg.yaml`
 FORCE_TORCHRUN=1 llamafactory-cli train ./train_configs/qwen2_vl_7b_sft_cfg.yaml
 ```
 
-or use the Slurm sbatch. Example script here for g5.2xlarge `./submit_train_singlenode.sh`
-
+or use the Slurm sbatch 
 ```
 sbatch submit_train_singlenode.sh 
 ```
+
+
 
 ####  Supervised Fine-Tuning on Multiple Nodes
 Need to be tested
@@ -68,10 +69,21 @@ Example `./lora_merge_configs/qwen2vl_lora_sft.yaml`
 llamafactory-cli export ./lora_merge_configs/qwen2vl_lora_sft.yaml  
 ```
 
-####  Evaluation using Hugging Face library 
+####  Evaluation using vLLM 
 
-You can process the testing data and run the evaluation 
+Once the model is merged, you can use vLLM for acceleration 
+https://qwen.readthedocs.io/en/latest/deployment/vllm.html
+
 ```
-cd qwen2vl_evaluation
-python qwen2vl_evaluation.py
+# conda deactivate 
+source ~/miniconda3/bin/activate
+conda create -n vllm python=3.10 
+conda activate vllm
+pip install vllm
 ```
+
+Error using vLLM (Qwen2 VL just merge, need to install vllm from source code)
+
+  File "/fsx/ubuntu/miniconda3/envs/vllm/lib/python3.10/site-packages/vllm/config.py", line 1746, in _get_and_verify_max_len
+    assert "factor" in rope_scaling
+AssertionError

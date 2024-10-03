@@ -56,7 +56,7 @@ FORCE_TORCHRUN=1 NNODES=2 RANK=0 MASTER_ADDR=192.168.0.1 MASTER_PORT=29500 llama
 FORCE_TORCHRUN=1 NNODES=2 RANK=1 MASTER_ADDR=192.168.0.1 MASTER_PORT=29500 llamafactory-cli train examples/train_full/llama3_full_sft_ds3.yaml
 ```
 
-####  Merge LoRA
+###  Merge LoRA
 
 Example `./lora_merge_configs/qwen2vl_lora_sft.yaml`
 
@@ -67,7 +67,7 @@ Example `./lora_merge_configs/qwen2vl_lora_sft.yaml`
 llamafactory-cli export ./lora_merge_configs/qwen2vl_lora_sft.yaml  
 ```
 
-####  Evaluation using Hugging Face library 
+###  Evaluation using Hugging Face library 
 
 You can process the testing data and run the evaluation 
 ```

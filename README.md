@@ -42,7 +42,7 @@ Prepare training config `./train_configs/qwen2_vl_7b_sft_cfg.yaml`
 FORCE_TORCHRUN=1 llamafactory-cli train ./train_configs/qwen2_vl_7b_sft_cfg.yaml
 ```
 
-or use the Slurm sbatch. Example script here for g5.2xlarge `./submit_train_singlenode.sh`
+or use the Slurm sbatch. Example script here `./submit_train_singlenode.sh` for single node single GPU i.e. g5.2xlarge 
 
 ```
 sbatch submit_train_singlenode.sh 
@@ -55,7 +55,6 @@ Need to be tested
 FORCE_TORCHRUN=1 NNODES=2 RANK=0 MASTER_ADDR=192.168.0.1 MASTER_PORT=29500 llamafactory-cli train examples/train_full/llama3_full_sft_ds3.yaml
 FORCE_TORCHRUN=1 NNODES=2 RANK=1 MASTER_ADDR=192.168.0.1 MASTER_PORT=29500 llamafactory-cli train examples/train_full/llama3_full_sft_ds3.yaml
 ```
-
 
 ####  Merge LoRA
 

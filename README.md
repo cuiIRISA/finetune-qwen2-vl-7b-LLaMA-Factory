@@ -78,7 +78,7 @@ sudo su - ubuntu
 SageMaker HyperPod supports connecting to the cluster via VSCode. You can setup a SSH Proxy via SSM and use that to connect in Visual Studio Code, following this guidance
 https://catalog.workshops.aws/sagemaker-hyperpod/en-US/05-advanced/05-vs-code
 
-## Training or fine-tuning 
+## Training and evaluation
 
 
 ### Miniconda install 

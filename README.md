@@ -126,6 +126,11 @@ sbatch submit_train_singlenode.sh
 ```
 
 ####  Supervised Fine-Tuning on Multiple Nodes
+use the Slurm sbatch. Example script here `./submit_train_multinode.sh` for 2 nodes of single GPU i.e. 2 * g5.2xlarge 
+
+```
+sbatch submit_train_multinode.sh 
+```
 
 
 ###  Merge LoRA
